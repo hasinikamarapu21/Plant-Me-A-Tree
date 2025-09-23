@@ -1,103 +1,89 @@
-import Image from "next/image";
+import React from 'react'
+import Link from 'next/link'
 
-export default function Home() {
+const Page = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <div className="pb-10">
+        <h1 className="flex flex-col sm:flex-row justify-center gap-1.5 items-center text-2xl sm:text-3xl font-bold pt-12 text-center">
+          Plant Me A Tree
+          <span>
+            <img className="pb-0.5 animate-bounce" width={60} height={60}
+              src="tree.png" alt="Tree Icon" />
+          </span>
+        </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <p className="text-center text-sm sm:text-base w-11/12 sm:w-2/3 md:w-1/2 lg:w-1/3 pb-4 mx-auto">
+          Join us in making the world greener, one tree at a time.
+          Together, we can plant a forest of hope for future generations.
+        </p>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-3 items-center">
+          <Link href="/login">
+            <button type="button"
+              className="text-white bg-gradient-to-br from-green-400 
+             to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+             focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg 
+             text-sm px-6 py-2.5 text-center cursor-pointer">
+              Get Started
+            </button>
+          </Link>
+
+          <Link href="/about">
+            <button type="button"
+              className="text-white bg-gradient-to-br from-green-400 
+             to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
+              focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg 
+               text-sm px-6 py-2.5 text-center cursor-pointer">
+              About Us
+            </button>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+
+      <div className="bg-slate-800 w-full h-0.5"></div>
+      <div className="flex flex-col gap-6 md:flex-row justify-center md:justify-around items-center text-2xl font-bold pb-7 pt-10 text-center">
+        Your Fans can buy a tree for you!
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-6 md:gap-2 items-center justify-center md:justify-around px-6 sm:px-10 pb-10">
+        <div className="item space-y-2 flex flex-col items-center justify-center text-center">
+          <img className="bg-slate-400 rounded-full p-2" width={80} src="/man.gif"
+            alt="Support" />
+          <p className="font-bold">Support Creators</p>
+          <p className="text-sm">Fans can show love by gifting trees.</p>
+        </div>
+
+        <div className="item space-y-2 flex flex-col items-center justify-center text-center">
+          <img className="bg-slate-400 rounded-full p-2" width={80}
+            src="/coin.gif" alt="Contribute" />
+          <p className="font-bold">Make an Impact</p>
+          <p className="text-sm">Each tree helps the environment grow.</p>
+        </div>
+
+        <div className="item space-y-2 flex flex-col items-center justify-center text-center">
+          <img className="bg-slate-400 rounded-full p-2" width={80}
+            src="/group.gif" alt="Collaborate" />
+          <p className="font-bold">Join Together</p>
+          <p className="text-sm">Fans unite for a greener tomorrow.</p>
+        </div>
+      </div>
+
+      <div className="bg-slate-800 w-full h-0.5"></div>
+      <div className="flex flex-col justify-center gap-1.5 items-center pb-7 pt-10 px-4">
+        <div className="text-xl sm:text-2xl font-bold pb-4 text-center">
+          Learn more about us
+        </div>
+
+        <div className="w-full max-w-[600px] h-[200px] sm:h-[300px]">
+          <video autoPlay loop muted playsInline
+            className="w-full h-full object-cover rounded-lg">
+            <source src="/intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </>
+  )
 }
+
+export default Page
